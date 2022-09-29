@@ -1,0 +1,122 @@
+golang-gopkg-ini.v1 (1.62.0-1) unstable; urgency=medium
+
+  * New upstream version 1.62.0
+  * debian/gbp.conf: Set debian-branch to debian/sid for DEP-14 conformance
+  * debian/gbp.conf: Remove [import-orig] "merge = False" setting
+  * Update debian/watch to match latest GitHub URL changes
+  * Run "cme fix dpkg":
+    - Reorder fields in debian/control
+    - Bump Standards-Version to 4.6.0 (no change)
+  * Change Section from devel to golang
+  * Mark library package with "Multi-Arch: foreign"
+
+ -- Anthony Fok <foka@debian.org>  Fri, 29 Oct 2021 04:19:17 -0600
+
+golang-gopkg-ini.v1 (1.57.0-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Use secure URI in Homepage field.
+  * Set upstream metadata fields:
+    Bug-Database, Bug-Submit, Repository, Repository-Browse.
+
+  [ Shengjing Zhu ]
+  * New upstream release 1.57.0
+  * Remove golang-github-smartystreets-goconvey-dev from Depends.
+    Only needed for testing
+  * Update debhelper-compat to 13
+
+ -- Shengjing Zhu <zhsj@debian.org>  Thu, 16 Jul 2020 00:39:53 +0800
+
+golang-gopkg-ini.v1 (1.52.0-2) unstable; urgency=medium
+
+  * Update Maintainer email address to team+pkg-go@tracker.debian.org.
+  * Change "golang-go" to "golang-any" in Build-Depends, and
+    remove unnecessary "golang-go" in Depends.
+  * Simplify debian/rules with dh-golang (>= 1.39~) and resolve Lintian
+    "override_dh_auto_test-does-not-check-DEB_BUILD_OPTIONS" notice.
+  * Add Upstream-Contact and expand author information
+    in debian/copyright, and override Lintian’s false positive
+    "spelling-error-in-copyright Unknwon Unknown" notice.
+  * Add myself to the list of Uploaders.
+
+ -- Anthony Fok <foka@debian.org>  Fri, 28 Feb 2020 19:23:46 -0700
+
+golang-gopkg-ini.v1 (1.52.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Rules-Requires-Root: no.
+  * Standards-Version: 4.5.0.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sat, 29 Feb 2020 01:41:37 +1100
+
+golang-gopkg-ini.v1 (1.51.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sun, 29 Dec 2019 10:40:12 +1100
+
+golang-gopkg-ini.v1 (1.51.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Standards-Version: 4.4.1.
+  * DH to version 12.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Mon, 16 Dec 2019 11:30:09 +1100
+
+golang-gopkg-ini.v1 (1.37.0-1) unstable; urgency=medium
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Dmitry Smirnov ]
+  * New upstream release.
+    + fixes FTBFS with go-1.10 (Closes: #890936).
+  * Testsuite: autopkgtest-pkg-go
+  * Standards-Version: 4.1.4; Priority: optional
+  * debhelper & compat to version 11
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Wed, 20 Jun 2018 15:19:56 +1000
+
+golang-gopkg-ini.v1 (1.32.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Remove Michael Lustfield (self) from Uploaders list.
+
+ -- Michael Lustfield <michael@lustfield.net>  Sat, 03 Feb 2018 12:13:27 -0600
+
+golang-gopkg-ini.v1 (1.32.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+ -- Michael Lustfield <michael@lustfield.net>  Fri, 29 Dec 2017 12:37:55 -0600
+
+golang-gopkg-ini.v1 (1.8.5-2) unstable; urgency=medium
+
+  * Team upload.
+  * debian/control:
+    - Update Standards-Version with no changes.
+    - Depend on latest dh-golang.
+  * debian/docs: Add ZH version of readme.
+  * debian/rules:
+    - Use new features of dh-golang, and only install relevant files.
+    - Clean up properly after tests. Thanks to Chris Lamb for the patch.
+      Closes: #828072.
+
+ -- Martín Ferrari <tincho@debian.org>  Sun, 26 Jun 2016 14:55:12 +0000
+
+golang-gopkg-ini.v1 (1.8.5-1) unstable; urgency=medium
+
+  * New upstream release [December 2015].
+  * rules:
+    + ignore test failures.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Fri, 18 Dec 2015 10:26:43 +1100
+
+golang-gopkg-ini.v1 (0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #805433).
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Wed, 18 Nov 2015 14:48:33 +1100
