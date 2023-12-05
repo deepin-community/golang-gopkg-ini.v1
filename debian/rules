@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --buildsystem=golang --with=golang --builddirectory=_build
+	dh $@ --buildsystem=golang --builddirectory=_build
 
 execute_after_dh_auto_test:
 	$(RM) -v _build/src/gopkg.in/ini.v1/testdata/conf_out.ini

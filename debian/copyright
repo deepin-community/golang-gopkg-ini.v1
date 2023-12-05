@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://github.com/go-ini/ini/
 Upstream-Name: ini.v1
 Upstream-Contact: Unknwon <u@gogs.io>
-Source: https://github.com/go-ini/ini/
 
 Files: *
 Copyright: 2014-2020 Unknwon <u@gogs.io>

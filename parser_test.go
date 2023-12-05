@@ -12,66 +12,66 @@
 // License for the specific language governing permissions and limitations
 // under the License.
 
-package ini_test
+package ini
 
 import (
 	"testing"
 
-	. "github.com/smartystreets/goconvey/convey"
-	"gopkg.in/ini.v1"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestBOM(t *testing.T) {
-	Convey("Test handling BOM", t, func() {
-		Convey("UTF-8-BOM", func() {
-			f, err := ini.Load("testdata/UTF-8-BOM.ini")
-			So(err, ShouldBeNil)
-			So(f, ShouldNotBeNil)
+	t.Run("test handling BOM", func(t *testing.T) {
+		t.Run("UTF-8-BOM", func(t *testing.T) {
+			f, err := Load("testdata/UTF-8-BOM.ini")
+			require.NoError(t, err)
+			require.NotNil(t, f)
 
-			So(f.Section("author").Key("E-MAIL").String(), ShouldEqual, "example@email.com")
+			assert.Equal(t, "example@email.com", f.Section("author").Key("E-MAIL").String())
 		})
 
-		Convey("UTF-16-LE-BOM", func() {
-			f, err := ini.Load("testdata/UTF-16-LE-BOM.ini")
-			So(err, ShouldBeNil)
-			So(f, ShouldNotBeNil)
+		t.Run("UTF-16-LE-BOM", func(t *testing.T) {
+			f, err := Load("testdata/UTF-16-LE-BOM.ini")
+			require.NoError(t, err)
+			require.NotNil(t, f)
 		})
 
-		Convey("UTF-16-BE-BOM", func() {
+		t.Run("UTF-16-BE-BOM", func(t *testing.T) {
 		})
 	})
 }
 
 func TestBadLoad(t *testing.T) {
-	Convey("Load with bad data", t, func() {
-		Convey("Bad section name", func() {
-			_, err := ini.Load([]byte("[]"))
-			So(err, ShouldNotBeNil)
+	t.Run("load with bad data", func(t *testing.T) {
+		t.Run("bad section name", func(t *testing.T) {
+			_, err := Load([]byte("[]"))
+			require.Error(t, err)
 
-			_, err = ini.Load([]byte("["))
-			So(err, ShouldNotBeNil)
+			_, err = Load([]byte("["))
+			require.Error(t, err)
 		})
 
-		Convey("Bad keys", func() {
-			_, err := ini.Load([]byte(`"""name`))
-			So(err, ShouldNotBeNil)
+		t.Run("bad keys", func(t *testing.T) {
+			_, err := Load([]byte(`"""name`))
+			require.Error(t, err)
 
-			_, err = ini.Load([]byte(`"""name"""`))
-			So(err, ShouldNotBeNil)
+			_, err = Load([]byte(`"""name"""`))
+			require.Error(t, err)
 
-			_, err = ini.Load([]byte(`""=1`))
-			So(err, ShouldNotBeNil)
+			_, err = Load([]byte(`""=1`))
+			require.Error(t, err)
 
-			_, err = ini.Load([]byte(`=`))
-			So(err, ShouldNotBeNil)
+			_, err = Load([]byte(`=`))
+			require.Error(t, err)
 
-			_, err = ini.Load([]byte(`name`))
-			So(err, ShouldNotBeNil)
+			_, err = Load([]byte(`name`))
+			require.Error(t, err)
 		})
 
-		Convey("Bad values", func() {
-			_, err := ini.Load([]byte(`name="""Unknwon`))
-			So(err, ShouldNotBeNil)
+		t.Run("bad values", func(t *testing.T) {
+			_, err := Load([]byte(`name="""Unknwon`))
+			require.Error(t, err)
 		})
 	})
 }
