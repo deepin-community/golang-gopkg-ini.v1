@@ -1,19 +1,19 @@
 Source: golang-gopkg-ini.v1
+Section: golang
+Priority: optional
 Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
 Uploaders: Dmitry Smirnov <onlyjob@debian.org>,
            Anthony Fok <foka@debian.org>
-Section: golang
-Testsuite: autopkgtest-pkg-go
-Priority: optional
+Rules-Requires-Root: no
 Build-Depends: debhelper-compat (= 13),
-               dh-golang,
+               dh-sequence-golang,
                golang-any,
-               golang-github-smartystreets-goconvey-dev
-Standards-Version: 4.6.0
+               golang-github-stretchr-testify-dev
+Testsuite: autopkgtest-pkg-go
+Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-gopkg-ini.v1
 Vcs-Git: https://salsa.debian.org/go-team/packages/golang-gopkg-ini.v1.git
 Homepage: https://gopkg.in/ini.v1
-Rules-Requires-Root: no
 XS-Go-Import-Path: gopkg.in/ini.v1
 
 Package: golang-gopkg-ini.v1-dev

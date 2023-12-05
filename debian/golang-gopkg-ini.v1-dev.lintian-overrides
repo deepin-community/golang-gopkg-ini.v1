@@ -1,2 +1,5 @@
+# Test data
+national-encoding [usr/share/gocode/src/gopkg.in/ini.v1/testdata/UTF-16-BE-BOM.ini]
+national-encoding [usr/share/gocode/src/gopkg.in/ini.v1/testdata/UTF-16-LE-BOM.ini]
 # Unknwon is the real username of upstream author Jiahua (Joe) Chen 陈佳桦
-golang-gopkg-ini.v1-dev binary: spelling-error-in-copyright Unknwon Unknown
+spelling-error-in-copyright Unknwon Unknown
